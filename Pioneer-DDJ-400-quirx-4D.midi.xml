@@ -1,0 +1,2302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MixxxMIDIPreset schemaVersion="1" mixxxVersion="2.2">
+    <info>
+        <name>Quirx Pioneer DDJ-400 4Deck</name>
+        <author>Warker/nschloe/dj3730/jusko/quirx</author>
+        <description>Midi Mapping for the Pioneer DDJ-400 with 4Deck switching</description>
+        <manual>pioneer_ddj_400</manual>
+        <forums>https://mixxx.discourse.group/t/pioneer-ddj-400/17476</forums>
+    </info>
+    <controller id="DDJ-400">
+        <scriptfiles>
+            <file functionprefix="PioneerDDJ400" filename="Pioneer-DDJ-400-quirx-4D-script.js"/>
+        </scriptfiles>
+        <controls>
+            <!--
+                BROWSER Section START
+            -->
+            <control>
+                <description>BROWSE - rotate - Scroll tracklist/tree view</description>
+                <group>[Library]</group>
+                <key>MoveVertical</key>
+                <status>0xB6</status>
+                <midino>0x40</midino>
+                <options>
+                    <SelectKnob/>
+                </options>
+            </control>
+            <control>
+                <description>BROWSE - press - Move cursor between track list and tree view</description>
+                <group>[Library]</group>
+                <key>MoveFocusForward</key> <!-- missing function to open Folder -->
+                <status>0x96</status>
+                <midino>0x41</midino>
+                <options>
+                    <Normal/>
+                </options>
+            </control>
+            <control>
+              <description>BROWSE +SHIFT - press - Move cursor between track list and tree view</description>
+                <group>[Library]</group>
+                <key>MoveFocusBackward</key> <!-- missing function to close Folder -->
+                <status>0x96</status>
+                <midino>0x42</midino>
+                <options>
+                    <Normal/>
+                </options>
+            </control>
+
+            <control>
+                <description>LOAD (DECK1) - press - Load a Track into Deck 1</description>
+                <group>L</group>
+                <key>PioneerDDJ400.LoadSelectedTrack</key>
+                <status>0x96</status>
+                <midino>0x46</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>LOAD (DECK2) - press - Load a Track into Deck 2</description>
+                <group>R</group>
+                <key>PioneerDDJ400.LoadSelectedTrack</key>
+                <status>0x96</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <!-- BROWSER Section END -->
+
+            <!--
+            DECK Section START
+            -->
+            <control>
+                <description>Shift (DECK1)</description>
+                <group>L</group>
+                <key>PioneerDDJ400.shiftPressed</key>
+                <status>0x90</status>
+                <midino>0x3F</midino>
+                <options>
+                  <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>Shift (DECK2)</description>
+                <group>R</group>
+                <key>PioneerDDJ400.shiftPressed</key>
+                <status>0x91</status>
+                <midino>0x3F</midino>
+                <options>
+                  <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>PLAY/PAUSE (DECK1) - press - Play/Pause</description>
+                <group>L</group>
+                <key>PioneerDDJ400.play</key>
+                <status>0x90</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PLAY/PAUSE +SHIFT (DECK1) - press - Reverse playback in Slip Mode while held (Censor)</description>
+                <group>L</group>
+                <key>PioneerDDJ400.reverseroll</key>
+                <status>0x90</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PLAY/PAUSE (DECK2) - press - Play/Pause</description>
+                <group>R</group>
+                <key>PioneerDDJ400.play</key>
+                <status>0x91</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PLAY/PAUSE +SHIFT (DECK2) - press - Reverse playback in Slip Mode while held (Censor)</description>
+                <group>R</group>
+                <key>PioneerDDJ400.reverseroll</key>
+                <status>0x91</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>CUE (DECK1) - press - Set/Call Cue, Back Cue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.cue_default</key>
+                <status>0x90</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE +SHIFT (DECK1) - press - Jump to track start</description>
+                <group>L</group>
+                <key>PioneerDDJ400.start_play</key>
+                <status>0x90</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE (DECK2) - press - Set/Call Cue, Back Cue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.cue_default</key>
+                <status>0x91</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE +SHIFT (DECK2) - press - Jump to track start</description>
+                <group>R</group>
+                <key>PioneerDDJ400.start_play</key>
+                <status>0x91</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>JOG DIAL PLATTER Vinyl mode On (DECK1) - rotate - Scratch</description>
+                <group>L</group>
+                <key>PioneerDDJ400.jogTurn</key>
+                <status>0xB0</status>
+                <midino>0x22</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL PLATTER Vinyl mode Off (DECK1) - rotate - Pitch bend</description>
+                <group>L</group>
+                <key>PioneerDDJ400.jogTurn</key>
+                <status>0xB0</status>
+                <midino>0x23</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL PLATTER +SHIFT (DECK1) - rotate - Search (Fast Pitch bend)</description>
+                <group>L</group>
+                <key>PioneerDDJ400.jogSearch</key>
+                <status>0xB0</status>
+                <midino>0x29</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL PLATTER (DECK1) - touch - enabe (on touch) / disable (on release) Scraching/Pitch
+                    bend
+                </description>
+                <group>L</group>
+                <key>PioneerDDJ400.jogTouch</key>
+                <status>0x90</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL PLATTER +SHIFT (DECK1) - touch - enabe (on touch) / disable (on release) highspeed
+                    Pitch bend
+                </description>
+                <group>L</group>
+                <key>PioneerDDJ400.jogTouch</key>
+                <status>0x90</status>
+                <midino>0x67</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL SIDE (DECK1) - rotate - Pitch bend</description>
+                <group>L</group>
+                <key>PioneerDDJ400.jogTurn</key>
+                <status>0xB0</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>JOG DIAL PLATTER Vinyl mode On (DECK2) - rotate - Scratch</description>
+                <group>R</group>
+                <key>PioneerDDJ400.jogTurn</key>
+                <status>0xB1</status>
+                <midino>0x22</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL PLATTER Vinyl mode Off (DECK2) - rotate - Pitch bend</description>
+                <group>R</group>
+                <key>PioneerDDJ400.jogTurn</key>
+                <status>0xB1</status>
+                <midino>0x23</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL PLATTER +SHIFT (DECK2) - rotate - Search (Fast Pitch bend)</description>
+                <group>R</group>
+                <key>PioneerDDJ400.jogSearch</key>
+                <status>0xB1</status>
+                <midino>0x29</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL PLATTER (DECK2) - touch - enabe (on touch) / disable (on release) Scraching/Pitch
+                    bend
+                </description>
+                <group>R</group>
+                <key>PioneerDDJ400.jogTouch</key>
+                <status>0x91</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL PLATTER +SHIFT (DECK2) - touch - enabe (on touch) / disable (on release) highspeed
+                    Pitch bend
+                </description>
+                <group>R</group>
+                <key>PioneerDDJ400.jogTouch</key>
+                <status>0x91</status>
+                <midino>0x67</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>JOG DIAL SIDE (DECK2) - rotate - Pitch bend</description>
+                <group>R</group>
+                <key>PioneerDDJ400.jogTurn</key>
+                <status>0xB1</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>TEMPO (DECK1) - fader - Tempo control LSB</description>
+                <group>L</group>
+                <key>PioneerDDJ400.tempoSliderLSB</key>
+                <status>0xB0</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>TEMPO (DECK1) - fader - Tempo control MSB</description>
+                <group>L</group>
+                <key>PioneerDDJ400.tempoSliderMSB</key>
+                <status>0xB0</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>TEMPO (DECK2) - fader - Tempo control LSB</description>
+                <group>R</group>
+                <key>PioneerDDJ400.tempoSliderLSB</key>
+                <status>0xB1</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>TEMPO (DECK2) - fader - Tempo control MSB</description>
+                <group>R</group>
+                <key>PioneerDDJ400.tempoSliderMSB</key>
+                <status>0xB1</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>BEAT SYNC (DECK1) - press - Beat Sync to Master deck</description>
+                <group>L</group>
+                <key>PioneerDDJ400.syncPressed</key>
+                <status>0x90</status>
+                <midino>0x58</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>BEAT SYNC LONG PRESS (DECK1) - press - Set as Master deck</description>
+                <group>L</group>
+                <key>PioneerDDJ400.syncLongPressed</key>
+                <status>0x90</status>
+                <midino>0x5C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>BEAT SYNC +SHIFT (DECK1) - press - change Tempo range</description>
+                <group>L</group>
+                <key>PioneerDDJ400.cycleTempoRange</key>
+                <status>0x90</status>
+                <midino>0x60</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>BEAT SYNC (DECK2) - press - Beat Sync to Master deck</description>
+                <group>R</group>
+                <key>PioneerDDJ400.syncPressed</key>
+                <status>0x91</status>
+                <midino>0x58</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>BEAT SYNC LONG PRESS (DECK2) - press - Set as Master deck</description>
+                <group>R</group>
+                <key>PioneerDDJ400.syncLongPressed</key>
+                <status>0x91</status>
+                <midino>0x5C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>BEAT SYNC +SHIFT (DECK2) - press - change Tempo range</description>
+                <group>R</group>
+                <key>PioneerDDJ400.cycleTempoRange</key>
+                <status>0x91</status>
+                <midino>0x60</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>LOOP IN/4 BEAT (DECK1) - press - Set loop in</description>
+                <group>L</group>
+                <key>PioneerDDJ400.loop_in</key>
+                <status>0x90</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>LOOP IN/4 BEAT (DECK2) - press - Set loop in</description>
+                <group>R</group>
+                <key>PioneerDDJ400.loop_in</key>
+                <status>0x91</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>LOOP IN/4 BEAT (DECK1) - press - Activate 4 beat loop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.loop_in_long</key>
+                <status>0x90</status>
+                <midino>0x14</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>LOOP IN/4 BEAT (DECK2) - press - Activate 4 beat loop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.loop_in_long</key>
+                <status>0x91</status>
+                <midino>0x14</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>LOOP OUT (DECK1) - press - Set loop out</description>
+                <group>L</group>
+                <key>PioneerDDJ400.loop_out</key>
+                <status>0x90</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>LOOP OUT (DECK2) - press - Set loop out</description>
+                <group>R</group>
+                <key>PioneerDDJ400.loop_out</key>
+                <status>0x91</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>RELOOP/EXIT (DECK1) - press - (loop off) Reloop, (loop on) Loop exit</description>
+                <group>L</group>
+                <key>PioneerDDJ400.reloop_toggle</key>
+                <status>0x90</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>RELOOP/EXIT (DECK2) - press - (loop off) Reloop, (loop on) Loop exit</description>
+                <group>R</group>
+                <key>PioneerDDJ400.reloop_toggle</key> <!-- check if correct -->
+                <status>0x91</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>RELOOP/EXIT +SHIFT (DECK1) - press - Reloop and stop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.reloop_andstop</key>
+                <status>0x90</status>
+                <midino>0x50</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>RELOOP/EXIT +SHIFT (DECK2) - press - Reloop and stop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.reloop_andstop</key>
+                <status>0x91</status>
+                <midino>0x50</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+<!--
+            <control>
+                <description>SHIFT + LOOP IN (DECK1) - Loop in adjust (using jog wheel)</description>
+                <group>L</group>
+                <key>PioneerDDJ400.toggleLoopAdjustIn</key>
+                <status>0x90</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>SHIFT + LOOP IN (DECK2) - Loop in adjust (using jog wheel)</description>
+                <group>R</group>
+                <key>PioneerDDJ400.toggleLoopAdjustIn</key>
+                <status>0x91</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>SHIFT + LOOP OUT (DECK1) - Loop out adjust (using jog wheel)</description>
+                <group>L</group>
+                <key>PioneerDDJ400.toggleLoopAdjustOut</key>
+                <status>0x90</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>SHIFT + LOOP OUT (DECK2) - Loop out adjust (using jog wheel)</description>
+                <group>R</group>
+                <key>PioneerDDJ400.toggleLoopAdjustOut</key>
+                <status>0x91</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+-->
+
+            <control>
+                <description>CUE/LOOP CALL LEFT (DECK1) - press - half active loop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.cueLoopCallLeft</key>
+                <status>0x90</status>
+                <midino>0x51</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE/LOOP CALL LEFT + SHIFT (DECK1) - press - quick jump back</description>
+                <group>L</group>
+                <key>PioneerDDJ400.quickJumpBack</key>
+                <status>0x90</status>
+                <midino>0x3E</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>CUE/LOOP CALL LEFT (DECK2) - press - half active loop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.cueLoopCallLeft</key>
+                <status>0x91</status>
+                <midino>0x51</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE/LOOP CALL LEFT + SHIFT (DECK2) - press - quick jump back</description>
+                <group>R</group>
+                <key>PioneerDDJ400.quickJumpBack</key>
+                <status>0x91</status>
+                <midino>0x3E</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>CUE/LOOP CALL LEFT (DECK1) - press - double active loop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.cueLoopCallRight</key>
+                <status>0x90</status>
+                <midino>0x53</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE/LOOP CALL RIGHT + SHIFT (DECK1) - press - quick jump forwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.quickJumpForward</key>
+                <status>0x90</status>
+                <midino>0x3D</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>CUE/LOOP CALL LEFT (DECK2) - press - double active loop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.cueLoopCallRight</key>
+                <status>0x91</status>
+                <midino>0x53</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE/LOOP CALL RIGHT + SHIFT (DECK2) - press - quick jump forwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.quickJumpForward</key>
+                <status>0x91</status>
+                <midino>0x3D</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <!-- DECK Section END -->
+
+            <!-- MIXER Section START -->
+            <control>
+                <description>GAIN - rotate</description>
+                <group>[Master]</group>
+                <key>gain</key>
+                <status>0xB6</status>
+                <midino>0x08</midino>
+                <options>
+                    <fourteen-bit-msb/>
+                </options>
+            </control>
+            <control>
+                <description>GAIN - rotate</description>
+                <group>[Master]</group>
+                <key>gain</key>
+                <status>0xB6</status>
+                <midino>0x28</midino>
+                <options>
+                    <fourteen-bit-lsb/>
+                </options>
+            </control>
+
+            <control>
+                <description>CROSSFADER - slider</description>
+                <group>[Master]</group>
+                <key>crossfader</key>
+                <status>0xB6</status>
+                <midino>0x1F</midino>
+                <options>
+                    <fourteen-bit-msb/>
+                </options>
+            </control>
+            <control>
+                <description>CROSSFADER - slider</description>
+                <group>[Master]</group>
+                <key>crossfader</key>
+                <status>0xB6</status>
+                <midino>0x3F</midino>
+                <options>
+                    <fourteen-bit-lsb/>
+                </options>
+            </control>
+
+            <control>
+                <description>CHANNELFADER - slider</description>
+                <group>L</group>
+                <key>PioneerDDJ400.volumeLSB</key>
+                <status>0xB0</status>
+                <midino>0x33</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CHANNELFADER - slider</description>
+                <group>L</group>
+                <key>PioneerDDJ400.volumeMSB</key>
+                <status>0xB0</status>
+                <midino>0x13</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CHANNELFADER - slider</description>
+                <group>R</group>
+                <key>PioneerDDJ400.volumeLSB</key>
+                <status>0xB1</status>
+                <midino>0x33</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CHANNELFADER - slider</description>
+                <group>R</group>
+                <key>PioneerDDJ400.volumeMSB</key>
+                <status>0xB1</status>
+                <midino>0x13</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>Shift + Left CUE - Toggle quantize on/off (Deck1)</description>
+                <group>L</group>
+                <key>PioneerDDJ400.toggleQuantize</key>
+                <status>0x90</status>
+                <midino>0x68</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>Shift + Right CUE - Toggle quantize on/off (Deck2)</description>
+                <group>R</group>
+                <key>PioneerDDJ400.toggleQuantize</key>
+                <status>0x91</status>
+                <midino>0x68</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>TRIM - rotate</description>
+                <group>L</group>
+                <key>PioneerDDJ400.mix_trim_lsb</key>
+                <status>0xB0</status>
+                <midino>0x24</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>TRIM - rotate</description>
+                <group>L</group>
+                <key>PioneerDDJ400.mix_trim_msb</key>
+                <status>0xB0</status>
+                <midino>0x04</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>TRIM - rotate</description>
+                <group>R</group>
+                <key>PioneerDDJ400.mix_trim_lsb</key>
+                <status>0xB1</status>
+                <midino>0x24</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>TRIM - rotate</description>
+                <group>R</group>
+                <key>PioneerDDJ400.mix_trim_msb</key>
+                <status>0xB1</status>
+                <midino>0x04</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>EQ HI - rotate</description>
+                <group>L</group>
+                <key>PioneerDDJ400.mix_hi_lsb</key>
+                <status>0xB0</status>
+                <midino>0x27</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ MID - rotate</description>
+                <group>L</group>
+                <key>PioneerDDJ400.mix_mid_lsb</key>
+                <status>0xB0</status>
+                <midino>0x2B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ LOW - rotate</description>
+                <group>L</group>
+                <key>PioneerDDJ400.mix_low_lsb</key>
+                <status>0xB0</status>
+                <midino>0x2F</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ HI - rotate</description>
+                <group>L</group>
+                <key>PioneerDDJ400.mix_hi_msb</key>
+                <status>0xB0</status>
+                <midino>0x07</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ MID - rotate</description>
+                <group>L</group>
+                <key>PioneerDDJ400.mix_mid_msb</key>
+                <status>0xB0</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ LOW - rotate</description>
+                <group>L</group>
+                <key>PioneerDDJ400.mix_low_msb</key>
+                <status>0xB0</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>EQ HI - rotate</description>
+                <group>R</group>
+                <key>PioneerDDJ400.mix_hi_lsb</key>
+                <status>0xB1</status>
+                <midino>0x27</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ MID - rotate</description>
+                <group>R</group>
+                <key>PioneerDDJ400.mix_mid_lsb</key>
+                <status>0xB1</status>
+                <midino>0x2B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ LOW - rotate</description>
+                <group>R</group>
+                <key>PioneerDDJ400.mix_low_lsb</key>
+                <status>0xB1</status>
+                <midino>0x2F</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ HI - rotate</description>
+                <group>R</group>
+                <key>PioneerDDJ400.mix_hi_msb</key>
+                <status>0xB1</status>
+                <midino>0x07</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ MID - rotate</description>
+                <group>R</group>
+                <key>PioneerDDJ400.mix_mid_msb</key>
+                <status>0xB1</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>EQ LOW - rotate</description>
+                <group>R</group>
+                <key>PioneerDDJ400.mix_low_msb</key>
+                <status>0xB1</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>CUE Channel - press - toggle Headphone Cue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.headphone_cue</key>
+                <status>0x90</status>
+                <midino>0x54</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE Channel - press - toggle Headphone Cue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.headphone_cue</key>
+                <status>0x91</status>
+                <midino>0x54</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+<!-- This is already used to toggle quantize.
+            <control>
+                <description>CUE Channel +SHIFT - press - Adjust BPM to match tapped BPM</description>
+                <group>L</group>
+                <key>PioneerDDJ400.bpm_tap</key>
+                <status>0x90</status>
+                <midino>0x68</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>CUE Channel +SHIFT - press - Adjust BPM to match tapped BPM</description>
+                <group>R</group>
+                <key>PioneerDDJ400.bpm_tap</key>
+                <status>0x91</status>
+                <midino>0x68</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+-->
+
+            <control>
+                <description>HEADPHONES MIXING - rotate - Monitor Balance</description>
+                <group>[Master]</group>
+                <key>headMix</key>
+                <status>0xB6</status>
+                <midino>0x2C</midino>
+                <options>
+                    <fourteen-bit-lsb/>
+                </options>
+            </control>
+            <control>
+                <description>HEADPHONES MIXING - rotate - Monitor Balance</description>
+                <group>[Master]</group>
+                <key>headMix</key>
+                <status>0xB6</status>
+                <midino>0x0C</midino>
+                <options>
+                    <fourteen-bit-msb/>
+                </options>
+            </control>
+
+            <control>
+                <description>HEADPHONES LEVEL - rotate - Headphone gain</description>
+                <group>[Master]</group>
+                <key>headGain</key>
+                <status>0xB6</status>
+                <midino>0x2D</midino>
+                <options>
+                    <fourteen-bit-lsb/>
+                </options>
+            </control>
+            <control>
+                <description>HEADPHONES LEVEL - rotate - Headphone gain</description>
+                <group>[Master]</group>
+                <key>headGain</key>
+                <status>0xB6</status>
+                <midino>0x0D</midino>
+                <options>
+                    <fourteen-bit-msb/>
+                </options>
+            </control>
+            <!-- MIXER Section END -->
+
+            <!-- EFFECT Section START -->
+            <control>
+                <description>FILTER CH1 - rotate - Filter Effect Knob</description>
+                <group>L</group>
+                <key>PioneerDDJ400.super1_msb</key>
+                <status>0xB6</status>
+                <midino>0x17</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>FILTER CH1 - rotate - Filter Effect Knob</description>
+                <group>L</group>
+                <key>PioneerDDJ400.super1_lsb</key>
+                <status>0xB6</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>FILTER CH2 - rotate - Filter Effect Knob</description>
+                <group>R</group>
+                <key>PioneerDDJ400.super1_msb</key>
+                <status>0xB6</status>
+                <midino>0x18</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>FILTER CH2 - rotate - Filter Effect Knob</description>
+                <group>R</group>
+                <key>PioneerDDJ400.super1_lsb</key>
+                <status>0xB6</status>
+                <midino>0x38</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <!-- BEAT FX SECTION START -->
+
+            <control>
+                <description>BEAT LEFT - press - next effect on focussed effect</description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.focussed_next_effect</key>
+                <status>0x94</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <!-- No use currently
+            <control>
+                <description>BEAT LEFT + shift</description>
+                <group>[EffectRack1_EffectUnit1]</group>
+                <key>PioneerDDJ400.beatFxSelectPreviousEffect</key>
+                <status>0x94</status>
+                <midino>0x66</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            -->
+
+            <control>
+                <description>BEAT RIGHT - press - previous effect on focussed effect</description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.focussed_prev_effect</key>
+                <status>0x94</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <!-- No use currently
+            <control>
+                <description>BEAT RIGHT + shift</description>
+                <group>[EffectRack1_EffectUnit1]</group>
+                <key>PioneerDDJ400.beatFxSelectNextEffect</key>
+                <status>0x94</status>
+                <midino>0x6B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            -->
+
+            <control>
+              <description>BEAT FX SELECT - focus next effect</description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.next_effect_slot</key>
+                <status>0x94</status>
+                <midino>0x63</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+              <description>BEAT FX SELECT + shift - focus previous effect</description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.prev_effect_slot</key>
+                <status>0x94</status>
+                <midino>0x64</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <!-- Beat Fx channel selector -->
+            <control>
+                <description>BEAT FX CH SELECT CH1 - slide - Select FX on DECK 1</description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.beat_fx_channel</key>
+                <status>0x94</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>BEAT FX CH SELECT CH2 - slide - Select FX on DECK 2</description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.beat_fx_channel</key>
+                <status>0x94</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>BEAT FX CH SELECT MASTER - slide - Select FX on Master</description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.beat_fx_channel</key>
+                <status>0x94</status>
+                <midino>0x14</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>BEAT FX LEVEL/DEPTH - rotate (MSB) - Adjust FX Level (mix) and BEAT FX Depth (meta) in the
+                    selected slot
+                </description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.beat_fx_level_depth_msb</key>
+                <status>0xB4</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>BEAT FX LEVEL/DEPTH - rotate (LSB) - Adjust FX Level (mix) and BEAT FX Depth (meta) in the
+                    selected slot
+                </description>
+                <group>Effect</group>
+                <key>PioneerDDJ400.beat_fx_level_depth_lsb</key>
+                <status>0xB4</status>
+                <midino>0x22</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>BEAT FX ON/OFF - press - Toggle FX in the selected Slot</description>
+                <group>[EffectRack1_EffectUnit1]</group>
+                <key>PioneerDDJ400.beat_fx_onoff</key>
+                <status>0x94</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>BEAT FX ON/OFF +SHIFT - press - Disable all enabled Beat FX Slots</description>
+                <group>[EffectRack1_EffectUnit1]</group>
+                <key>PioneerDDJ400.beat_fx_onoff_shift</key>
+                <status>0x94</status>
+                <midino>0x43</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <!-- BEAT FX SECTION END-->
+            <!-- EFFECT Section END -->
+
+            <!-- HOT CUE MODE START -->
+            <control>
+                <description>PAD 1 (DECK1) HOT CUE MODE - press - set hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 +SHIFT (DECK1) HOT CUE MODE - press - delete hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 (DECK2) HOT CUE MODE - press - set hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 +SHIFT (DECK2) HOT CUE MODE - press - delete hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (DECK1) HOT CUE MODE - press - set hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 +SHIFT (DECK1) HOT CUE MODE - press - delete hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (DECK2) HOT CUE MODE - press - set hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 +SHIFT (DECK2) HOT CUE MODE - press - delete hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (DECK1) HOT CUE MODE - press - set hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 +SHIFT (DECK1) HOT CUE MODE - press - delete hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (DECK2) HOT CUE MODE - press - set hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 +SHIFT (DECK2) HOT CUE MODE - press - delete hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (DECK1) HOT CUE MODE - press - set hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x03</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 +SHIFT (DECK1) HOT CUE MODE - press - delete hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x03</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (DECK2) HOT CUE MODE - press - set hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x03</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 +SHIFT (DECK2) HOT CUE MODE - press - delete hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x03</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5(DECK1) HOT CUE MODE - press - set hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x04</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 +SHIFT (DECK1) HOT CUE MODE - press - delete hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x04</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (DECK2) HOT CUE MODE - press - set hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x04</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 +SHIFT (DECK2) HOT CUE MODE - press - delete hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x04</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (DECK1) HOT CUE MODE - press - set hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 +SHIFT (DECK1) HOT CUE MODE - press - delete hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (DECK2) HOT CUE MODE - press - set hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 +SHIFT (DECK2) HOT CUE MODE - press - delete hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (DECK1) HOT CUE MODE - press - set hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 +SHIFT (DECK1) HOT CUE MODE - press - delete hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (DECK2) HOT CUE MODE - press - set hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 +SHIFT (DECK2) HOT CUE MODE - press - delete hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (DECK1) HOT CUE MODE - press - set hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x07</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 +SHIFT (DECK1) HOT CUE MODE - press - delete hotcue</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x07</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (DECK2) HOT CUE MODE - press - set hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x07</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 +SHIFT (DECK2) HOT CUE MODE - press - delete hotcue</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x07</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <!-- HOT CUE MODE END -->
+
+            <!-- BEAT LOOP MODE START -->
+
+            <control>
+                <description>PAD 1 (DECK1) BEAT LOOP MODE - press - 1/4 Beatloop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x60</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 (DECK2) BEAT LOOP MODE - press - 1/4 Beatloop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x60</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (DECK1) BEAT LOOP MODE - press - 1/2 Beatloop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x61</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (DECK2) BEAT LOOP MODE - press - 1/2 Beatloop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x61</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (DECK1) BEAT LOOP MODE - press - 1/1 Beatloop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x62</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (DECK2) BEAT LOOP MODE - press - 1/1 Beatloop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x62</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (DECK1) BEAT LOOP MODE - press - 2 Beatloop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x63</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (DECK2) BEAT LOOP MODE - press - 2 Beatloop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x63</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (DECK1) BEAT LOOP MODE - press - 4 Beatloop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x64</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (DECK2) BEAT LOOP MODE - press - 4 Beatloop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x64</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (DECK1) BEAT LOOP MODE - press - 8 Beatloop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x65</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (DECK2) BEAT LOOP MODE - press - 8 Beatloop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x65</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (DECK1) BEAT LOOP MODE - press - 16 Beatloop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x66</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (DECK2) BEAT LOOP MODE - press - 16 Beatloop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x66</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (DECK1) BEAT LOOP MODE - press - 32 Beatloop</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x67</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (DECK2) BEAT LOOP MODE - press - 32 Beatloop</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x67</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <!-- BEAT LOOP MODE END -->
+
+            <!-- BEAT JUMP MODE START-->
+            <control>
+                <description>PAD 1 (DECK1) BEAT JUMP MODE - press - Jump 1 Beat backwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 (DECK2) BEAT JUMP MODE - press - Jump 1 Beat backwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (DECK1) BEAT JUMP MODE - press - Jump 1 Beat forwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (DECK2) BEAT JUMP MODE - press - Jump 1 Beat forwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (DECK1) BEAT JUMP MODE - press - Jump 2 Beats backwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x22</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (DECK2) BEAT JUMP MODE - press - Jump 2 Beats backwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x22</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (DECK1) BEAT JUMP MODE - press - Jump 2 Beats forwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x23</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (DECK2) BEAT JUMP MODE - press - Jump 2 Beats forwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x23</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (DECK1) BEAT JUMP MODE - press - Jump 4 Beats backwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x24</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (DECK2) BEAT JUMP MODE - press - Jump 4 Beats backwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x24</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (DECK1) BEAT JUMP MODE - press - Jump 4 Beats forwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x25</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (DECK2) BEAT JUMP MODE - press - Jump 4 Beats forwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x25</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (DECK1) BEAT JUMP MODE - press - Jump 8 Beats backwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x26</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (DECK2) BEAT JUMP MODE - press - Jump 8 Beats backwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x26</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (DECK1) BEAT JUMP MODE - press - Jump 8 Beats forwards</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x27</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (DECK2) BEAT JUMP MODE - press - Jump 8 Beats forwards</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x27</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+            <control>
+                <description>PAD 1 (DECK1) + Shift - switch to next deck</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 (DECK2) + Shift - switch to next deck</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+
+            <control>
+                <description>PAD 2 (DECK1) + Shift - toggle cue split</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (DECK2) + Shift - toggle cue split</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+
+            <control>
+                <description>PAD 4 (DECK1) + Shift - toggle keylock</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x23</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (DECK2) + Shift - toggle keylock</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x23</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+
+            <control>
+                <description>PAD 7 (DECK1) +SHift BEAT JUMP MODE - press - decrease Beatjump by a factor of 16</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x26</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (DECK2) +Shift BEAT JUMP MODE - press - decrease Beatjump by a factor of 16</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x26</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (DECK1) +SHift BEAT JUMP MODE - press - increase Beatjump by a factor of 16</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x27</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (DECK2) +Shift BEAT JUMP MODE - press - increase Beatjump by a factor of 16</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x27</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <!-- BEAT JUMP MODE END -->
+
+            <!-- SAMPLER MODE START -->
+            <control>
+                <description>PAD 1 (LEFT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler1]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x30</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 (LEFT)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler1]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x30</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (LEFT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler2]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x31</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (LEFT)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler2]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x31</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (LEFT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler3]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x32</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (LEFT)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler3]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x32</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (LEFT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler4]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x33</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (LEFT)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler4]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x33</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (LEFT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler5]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x34</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (LEFT)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler5]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x34</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (LEFT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler6]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x35</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (LEFT)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler6]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x35</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (LEFT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler7]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (LEFT)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler7]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (LEFT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler8]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (LEFT)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler8]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x98</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+
+            <control>
+                <description>PAD 1 (RIGHT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler9]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x30</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 (Right)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler9]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x30</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (RIGHT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler10]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x31</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 2 (Right)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler10]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x31</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (RIGHT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler11]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x32</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 3 (Right)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler11]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x32</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (RIGHT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler12]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x33</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 4 (Right)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler12]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x33</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (RIGHT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler13]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x34</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 5 (Right)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler13]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x34</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (RIGHT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler14]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x35</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 6 (Right)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler14]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x35</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (RIGHT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler15]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 7 (Right)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler15]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (RIGHT) SAMPLE MODE - press - Play Sample or Load Track</description>
+                <group>[Sampler16]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 8 (Right)+SHIFT SAMPLE MODE - press - Stop Playback or Eject Track</description>
+                <group>[Sampler16]</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x9A</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <!-- SAMPLER MODE END -->
+
+            <!-- PAD FX1 MODE START -->
+            <control>
+                <description>PAD 1 (DECK1) - vinyl brake</description>
+                <group>L</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x97</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <description>PAD 1 (DECK2) - vinyl brake</description>
+                <group>R</group>
+                <key>PioneerDDJ400.handle_pad</key>
+                <status>0x99</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <!-- PAD FX1 MODE END -->
+
+            <!-- PAD Section END -->
+        </controls>
+    </controller>
+</MixxxMIDIPreset>
