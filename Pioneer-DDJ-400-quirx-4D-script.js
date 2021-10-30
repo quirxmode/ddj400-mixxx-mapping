@@ -3,7 +3,7 @@
 // * Mixxx mapping script file for the Pioneer DDJ-400 with 4-deck switching.
 // * Authors: Quirx, Warker, nschloe, dj3730, jusko
 // * Reviewers: ?
-// * Manual: https://manual.mixxx.org/2.3/en/hardware/controllers/pioneer_ddj_400.html
+// * Manual: tbd
 // ****************************************************************************
 //
 // Most of the code was written from scratch, but some residuals from the original DDJ-400
@@ -81,7 +81,7 @@
 // Oddities:
 //   - There is only one effect light but we use up to two effect units.
 //     The effect light follows the active effect unit. The active effect unit is determined
-//     the last shift button that was pressed. The left shift button sets the effect unit
+//     by the last shift button that was pressed. The left shift button sets the effect unit
 //     associated with the left channel's deck as active, while the right shift button
 //     sets the effect unit associated with the right channel's deck as active.
 //     By default, the decks 0/1 are associated with the first effect unit and the decks
@@ -89,7 +89,8 @@
 //     Also, the effect channel select slider selects the channel for the active effect unit,
 //     but only allows to select decks that are associated with the unit. This is super
 //     confusing at first, but it is safer to use than other options. Basically, it makes
-//     sense when both controller channels are switched at the same time.
+//     sense when both controller channels are switched at the same time. Then, FX unit 2
+//     is for the alternate decks, and FX unit 1 for the primary decks.
 //
 // Suggestions:
 //   - Being able to switch the decks independently is very confusing as you easily lose
@@ -98,26 +99,28 @@
 //   - Long-press loop-in for an instant 4-beat-loop currently requires
 //     merging of PR #4491. You can use this mapping without the PR by commenting the line
 //           engine.setValue(group, 'beatloop_keep_loopin', 4);
-//     in the function PioneerDDJ400.loop_in_long.
+//     in the function PioneerDDJ400.loop_in_long (The long-press 4-beat feature will
+//     not work then).
 //
 // Features:
 //   - Decks are switched by double-pressing the shift button. Only the deck on the side
 //     of the shift button is switched unless always_toggle_both = true (default false).
 //   - The decks can alternatively be switched via the beatjump + shift + first pad.
-//     The first pad is lit if the channel is currently associated with the main
-//     deck for this channel.
-//   - Headphone cue split can be toggled via beatjump + shift + second pad. The second
-//     pad is lit if headphone cue split is active. This control is identical for
-//     both controller channels.
+//     The first pad is lit when pressing shift in beatjump mode if the channel is
+//     currently associated with the main deck for this channel.
+//   - Headphone cue split can be toggled via beatjump + shift + second pad. It is lit if
+//     headphone cue split is active. This control is identical for both controller channels.
 //   - Keylock can be toggled via beatjump + shift + 4th pad. The pad is lit if keylock
 //     is on for the deck.
 //   - Beatjump size can be scaled using beatjump + shift + 7th/8th pad. The 7th pad
-//     decreases the sizes by a factor of 1/16. The pads are lit if further decrease/increase
-//     is possible (currently only one scaling step in either direction is allowed, this gives
-//     a range from 1/16 to 512 which *should* be enough for most people).
+//     decreases the sizes by a factor of 1/16, the 8th increases by a factor of 16.
+//     The pads are lit if further decrease/increase is possible (currently only one scaling
+//     step in either direction is allowed, this gives a range from 1/16 to 512
+//     which *should* be enough for most people).
 //   - Quantize can be toggled with shift+headphone cue. Pressing shift highlights those
 //     buttons according to the deck's quantize state.
-//   - Vinly break is implemented as pad 1 in PAD FX 1.
+//   - Vinly break is implemented as pad 1 in PAD FX 1. The break speed can be adjusted via
+//     brake_speed (default 20), higher values = faster braking.
 //   - Loop in/out adjust works by just pressing the in/out buttons while a loop is active.
 //     Adjustment is performed by rotating the jogwheel. Loop adjust mode exits automatically
 //     when switching decks on the controller channel where loop adjust is in use. To normally
@@ -1197,7 +1200,7 @@ PioneerDDJ400.loop_in_long = function (channel, _control, _value, _status, _grou
         return;
     }
 
-    //engine.setValue(group, 'beatloop_size', 4);
+    engine.setValue(group, 'beatloop_size', 4);
     engine.setValue(group, 'beatloop_keep_loopin', 4);
 }
 
@@ -1663,8 +1666,8 @@ PioneerDDJ400.init = function (_id, _debugging) {
 
 PioneerDDJ400.shutdown = function () {
     for (var conn in PioneerDDJ400.state.persistent_connections) {
-        if (conn !== undefined) {
-            conn.disconnect();
+        if (PioneerDDJ400.state.persistent_connections[conn] !== undefined) {
+            PioneerDDJ400.state.persistent_connections[conn].disconnect();
         }
     }
     PioneerDDJ400.state.persistent_connections = {};
