@@ -105,6 +105,8 @@
 // Features:
 //   - Decks are switched by double-pressing the shift button. Only the deck on the side
 //     of the shift button is switched unless always_toggle_both = true (default false).
+//     This can lead to accidental deck swapping, which is difficult to notice, so it can
+//     be disabled by setting the variable 'enable_double_press_deck_swap' to false.
 //   - The decks can alternatively be switched via the beatjump + shift + first pad.
 //     The first pad is lit when pressing shift in beatjump mode if the channel is
 //     currently associated with the main deck for this channel.
@@ -128,6 +130,12 @@
 //   - Effects are selected by the FX SELECT button (next effect, +SHIFT previous effect).
 //     Effects are cycled using the beat </> buttons. The active effect unit is determined by
 //     the deck whose shift button was last pressed.
+//   - When not in a loop, an instant 4-beat-loop/8-beat-loop is started when pressing the
+//     cue/loop left/right buttons respectively. Since Mixxx does not have a UI for saved
+//     loops at this point, it does not make sense to use these buttons to jump between saved
+//     loops. Feel free to adjust it if you do not like this mapping ;)
+//   - When in a loop, pressing the cue/loop left/right buttons halves/doubles the size of
+//     the currently active loop.
 
 var PioneerDDJ400 = {};
 
@@ -148,12 +156,13 @@ PioneerDDJ400.constants = {
     fast_seek_scale: 150,
     vinyl_mode: true,
     jog_alpha: 1.0 / 8,
-    jog_beta: (1.0 / 8) / 32,
+    jog_beta: (1.0 / 8) / 64,
     tempo_range: [0.06, 0.1, 0.16, 0.25],
     beatloop_sizes: [0.25, 0.5, 1, 2, 4, 8, 16, 32],
     beatjump_sizes: [-1, 1, -2, 2, -4, 4, -8, 8],
     beatjump_scalefac: 16,
     quick_jump_size: 32,
+    enable_double_press_deck_swap: false,
     times: {
         loop_active: 500,
         loop_adjust: 250,
@@ -362,7 +371,7 @@ PioneerDDJ400.internal = {
         midi.sendShortMsg(cmd.status, cmd.data1, length);
     },
     vu_meter_update: function (value, group) {
-        var scaled_value = value * 140;
+        var scaled_value = value * 130;
         midi.sendShortMsg(PioneerDDJ400.constants.lights.vu_meter.status + PioneerDDJ400.internal.group_to_channel(group),
             PioneerDDJ400.constants.lights.vu_meter.data1,
             scaled_value);
@@ -639,7 +648,9 @@ PioneerDDJ400.internal = {
     },
     // shift
     shift_double_press: function (channel) {
-        PioneerDDJ400.internal.toggle_deck_channel_gateway(channel);
+        if (PioneerDDJ400.constants.enable_double_press_deck_swap) {
+            PioneerDDJ400.internal.toggle_deck_channel_gateway(channel);
+        }
     },
     get_shift_double: function (channel) {
         if (PioneerDDJ400.state.channel[channel].shift_double !== undefined) {
@@ -968,9 +979,9 @@ PioneerDDJ400.jogTouch = function (channel, _control, value) {
 
     const group_number = deck + 1;
     if (value !== 0 && cst.vinyl_mode) {
-        engine.scratchEnable(group_number, 720, 33 + 1 / 3, cst.jog_alpha, cst.jog_beta);
+        engine.scratchEnable(group_number, 720, 33 + 1 / 3, cst.jog_alpha, cst.jog_beta, true);
     } else {
-        engine.scratchDisable(group_number);
+        engine.scratchDisable(group_number, true);
     }
 };
 
@@ -1255,7 +1266,15 @@ PioneerDDJ400.cueLoopCallLeft = function (channel, _control, value, _status, _gr
         return;
     }
 
-    engine.setValue(PioneerDDJ400.internal.channel_to_group(channel), "loop_scale", 0.5);
+    const it = PioneerDDJ400.internal;
+    const group = it.channel_to_group(channel);
+    if (it.get_loop_active(group)) {
+        engine.setValue(group, "loop_scale", 0.5);
+        return;
+    }
+
+    engine.setValue(group, 'beatloop_size', 4);
+    engine.setValue(group, 'beatloop_activate', 1);
 }
 
 PioneerDDJ400.cueLoopCallRight = function (channel, _control, value, _status, _group) {
@@ -1263,7 +1282,15 @@ PioneerDDJ400.cueLoopCallRight = function (channel, _control, value, _status, _g
         return;
     }
 
-    engine.setValue(PioneerDDJ400.internal.channel_to_group(channel), "loop_scale", 2);
+    const it = PioneerDDJ400.internal;
+    const group = it.channel_to_group(channel);
+    if (it.get_loop_active(group)) {
+        engine.setValue(group, "loop_scale", 2);
+        return;
+    }
+
+    engine.setValue(group, 'beatloop_size', 8);
+    engine.setValue(group, 'beatloop_activate', 1);
 }
 
 PioneerDDJ400.quickJumpBack = function (channel, _control, value, _status, _group) {
